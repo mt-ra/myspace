@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavDropDown from "./NavDropDown";
+import { SignInButton, SignOutButton } from "@/components/buttons";
 
 function NavMenu() {
   return (
@@ -10,13 +11,19 @@ function NavMenu() {
       </Link>
       <ul className="nav-links">
         <li>
-          <Link href={'/about'}>About</Link>
+          <Link href={'/about'} className="nav-link">About</Link>
         </li>
         <li>
-          <Link href={'/blog'}>Blog</Link>
+          <Link href={'/blog'} className="nav-link">Blog</Link>
         </li>
         <li>
-          <Link href={'/users'}>Users</Link>
+          <Link href={'/users'} className="nav-link">Users</Link>
+        </li>
+        <li>
+          <SignInButton />
+        </li>
+        <li>
+          <SignOutButton />
         </li>
       </ul>
       <NavDropDown />

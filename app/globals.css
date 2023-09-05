@@ -33,10 +33,10 @@
 }
 
 .nav-links {
-  @apply flex flex-row items-center;
+  @apply h-full flex flex-row items-center p-0;
 }
 
-.nav-links li * {
+.nav-link {
   @apply h-full  px-10 py-5;
   @apply text-center align-middle;
   @apply bg-inherit hover:bg-blue-800 text-white;
@@ -56,4 +56,15 @@
   .nav-link-icon {
     @apply block
   }
+}
+
+#profile-pic {
+  @apply px-10 py-2;
+}
+
+/* Sign in Sign out buttons */
+.auth-btn {
+  @apply h-full px-10 py-5;
+  @apply text-center align-middle;
+  @apply bg-green-500 hover:bg-green-700 text-white;
 }

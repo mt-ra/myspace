@@ -1,27 +1,30 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import NavMenu from './NavMenu'
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import NavMenu from "./NavMenu";
+import AuthProvider from "./AuthProvider";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'NextSpace',
-  description: 'Revolutionary Social Media',
-}
+  title: "NextSpace",
+  description: "Revolutionary Social Media",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-      </head>
-      <body className={inter.className}>
-        <NavMenu />
-        {children}</body>
-    </html>
-  )
+    <AuthProvider>
+      <html lang="en">
+        <head></head>
+        <body className={inter.className}>
+          <NavMenu />
+          {children}
+        </body>
+      </html>
+    </AuthProvider>
+  );
 }
